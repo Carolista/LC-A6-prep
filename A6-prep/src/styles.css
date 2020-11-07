@@ -9,8 +9,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #111;
-    color: ghostwhite;
-    font-family: 'Laila', serif;
+    color: #ccc;
+    font-family: 'Manjari', sans-serif;
     font-weight: 400;
     font-size: 11pt;
     margin: 0px;
@@ -19,30 +19,28 @@ body {
 }
 
 h1 {
-    font-family: 'Rancho', cursive;
+    font-weight: 700;
     font-size: 2.1rem;
+    text-transform: uppercase;
     margin: 0px;
-    text-align: center;
 }
 
 h2 {
-    font-family: 'Rancho', cursive;
+    font-weight: 100;
     font-size: 1.8rem;
-    color: #016e44;
-    margin: 0px 0px -10px; /* adjust so first photo isn't so far away */
+    margin: 0px 0px 15px;
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin: 5px 0px;
-    text-align: center;
+    margin: 0px;
 }
 
 h4 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0px 0px 5px;
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin: 15px 0px;
 }
 
 h5 {
@@ -54,7 +52,7 @@ h5 {
 h6 {
     font-size: 0.75rem;
     font-weight: 700;
-    margin: 5px 0px 5px; 
+    margin: 0px; 
 }
 
 p {
@@ -63,9 +61,29 @@ p {
 
 img {
     width: 100%; /* of whatever container it's in */
-    border: 2px #016e44 solid;
+    border: 2px #ccc solid;
     margin: 0px;
 }
 
 
 /** CLASSES **/
+
+.pseudobutton {
+    font-size: 20px;
+    height: 28px;
+    width: 240px;
+    color: #ccc;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 15px 0px;
+    margin: 0px 0px 15px;
+}
+
+.pseudobutton:hover {
+    cursor: pointer;
+    color: #222;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+}

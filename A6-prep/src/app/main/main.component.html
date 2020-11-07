@@ -1,4 +1,36 @@
-<div>
-    <main></main>
-    <app-current-list></app-current-list>
-</div>
+<section>
+
+    <!-- On left -->
+    <div id="main">
+
+        <!-- All the lists -->
+        <div class="pseudobutton" *ngFor="let list of allLists" (click)="viewNewList(list)">{{list.title}}</div>
+
+        <!-- Toggle to add new list -->
+        <h4 id="add-new" *ngIf="!addingNewList" (click)="addingNewList = true">+ Add new list</h4>
+
+        <!-- Form to create new list -->
+        <div id="new-list-form" *ngIf="addingNewList">
+            <h4 id="create-new">Create a New List:</h4>
+            <form #form>
+                <input #titleField type="text" maxLength="20" placeholder="Title" [class.empty-warning]="formIncomplete" />
+                <select #typeField>
+                    <option value="general">General</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="to do">To Do</option>
+                </select>
+                <textarea #descField rows="4" cols="30" maxLength="200" placeholder="Description"></textarea>
+                <div id="form-buttons">
+                    <div id="submit" class="small-button" (click)="createNewList(titleField.value, typeField.value, descField.value)">Create</div>
+                    <div id="cancel" class="small-button" (click)="addingNewList = false; formIncomplete = false">Cancel</div>
+                </div>
+                
+                <div id="warning" *ngIf="formIncomplete">Please give your list a title!</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- On right -->
+    <app-current-list [currentList]="currentList"></app-current-list>
+
+</section>
