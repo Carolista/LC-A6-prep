@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+    Anything in this file will apply to all components, unless overriden in one of the component's own CSS files.
+*/
+
+
+/** ELEMENTS **/
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    color: ghostwhite;
+    font-family: 'Laila', serif;
+    font-weight: 400;
+    font-size: 11pt;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Rancho', cursive;
+    font-size: 2.1rem;
+    margin: 0px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Rancho', cursive;
+    font-size: 1.8rem;
+    color: #016e44;
+    margin: 0px 0px -10px; /* adjust so first photo isn't so far away */
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 5px 0px;
+    text-align: center;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0px 0px 5px;
+}
+
+h5 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 5px 0px 5px; 
+}
+
+h6 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin: 5px 0px 5px; 
+}
+
+p {
+    margin: 0px 0px 5px;
+}
+
+img {
+    width: 100%; /* of whatever container it's in */
+    border: 2px #016e44 solid;
+    margin: 0px;
+}
+
+
+/** CLASSES **/
