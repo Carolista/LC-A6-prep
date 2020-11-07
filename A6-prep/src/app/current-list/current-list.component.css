@@ -1,0 +1,23 @@
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px;
+    margin: 0px;
+}
+
+#desc {
+    font-weight: 100;
+    font-size: 1.3rem;
+    margin: 5px 0px;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item {
+    font-size: 1.1rem;
+    margin: 5px 0px 0px;
+}

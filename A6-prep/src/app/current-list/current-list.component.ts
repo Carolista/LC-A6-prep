@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { List } from '../list';
 
 @Component({
-  selector: 'app-current-list',
-  templateUrl: './current-list.component.html',
-  styleUrls: ['./current-list.component.css']
+    selector: 'app-current-list',
+    templateUrl: './current-list.component.html',
+    styleUrls: ['./current-list.component.css']
 })
 export class CurrentListComponent implements OnInit {
 
-  constructor() { }
+    @Input() currentList: List;
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

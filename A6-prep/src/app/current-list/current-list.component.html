@@ -1,4 +1,7 @@
-<h4>List Name</h4>
-<p>Item 1</p>
-<p>Item 2</p>
-<p>Item 3</p>
+<section>
+    <h3>{{currentList.title}}</h3>
+    <p id="desc">{{currentList.desc}}</p>
+    <div class="list-group" *ngFor="let item of currentList.items">
+        <label class="list-item"><input type="checkbox" /> {{item}}</label>
+    </div>
+</section>
