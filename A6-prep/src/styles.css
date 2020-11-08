@@ -66,6 +66,12 @@ img {
     margin: 0px;
 }
 
+input {
+    background-color: #ccc;
+    order: 2px solid #666;
+    padding: 2px;
+}
+
 
 /** CLASSES **/
 

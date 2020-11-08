@@ -7,10 +7,7 @@ section {
 }
 
 input {
-    background-color: #ccc;
     margin: 0px 10px 10px 0px;
-    border: 2px solid #666;
-    padding: 2px;
 }
 
 textarea {
