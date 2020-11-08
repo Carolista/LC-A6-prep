@@ -12,7 +12,6 @@ export class List {
         this.items = []; // always initialized to empty array
     }
 
-    // TODO: write search method? could search by type, by keywords in title/desc/items
+    // I initially was planning to add search and sort functionality to the app but ran out of time - I may still go back and do it later.
 
-    // TODO: write sort method? sort a single list by items alpha or sort all lists by type?
 }
