@@ -8,8 +8,8 @@
     <ng-container *ngIf="!editing">
         <!-- Toggle to edit list -->
         <div id="toggle">
-            <span class="mini-buttons" *ngIf="!editing" (click)="editing = true">[ Edit list ]</span>
-            <span class="mini-buttons" *ngIf="!editing" (click)="deleteList()">[ Delete list ]</span>
+            <span class="mini-buttons" (click)="editing = true">[ Edit list ]</span>
+            <span class="mini-buttons" (click)="deleteList()">[ Delete list ]</span>
         </div>
         <!-- Checklist -->
         <div class="list-group" *ngFor="let item of currentList.items">
