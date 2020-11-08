@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
         this.createInitialLists();
     }
 
-    // For the sake of demonstration, create some existing lists
+    // For the sake of demonstration, create some existing lists since there is no back end (database)
     createInitialLists(): void {
         this.allLists = [
             new List("Schnucks", "shopping", "groceries and household items"),
@@ -37,7 +37,7 @@ export class MainComponent implements OnInit {
         this.allLists[3].items = ["Unload dishwasher", "Clean out fridge", "Reload dishwasher", "Take out trash & recyclables", "Sweep kitchen floor", "Wash sheets & towels", "Change furnace filter"];
         this.allLists[4].items = ["shirts & pants for 3 days", "undies", "socks and shoes", "sleepwear", "light coat", "toiletries (don't forget deodorant!!!)", "hair clips", "phone charger", "pillow"];
 
-        this.currentList = this.allLists[0];
+        this.currentList = this.allLists[0]; // set default now that some lists are in place
     }
 
     // Select new list to view

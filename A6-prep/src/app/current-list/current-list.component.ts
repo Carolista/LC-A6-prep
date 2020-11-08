@@ -31,6 +31,17 @@ export class CurrentListComponent implements OnInit {
         if (title === '') {
             this.formIncomplete = true;
         } else {
+            // Remove any items that were left blank
+            let i: number = 0;
+            let item: string;
+            while (i < this.currentList.items.length) {
+                item = this.currentList.items[i];
+                if (item.trim() === "") {
+                    this.currentList.items.splice(i,1);
+                } else {
+                    i += 1;
+                }
+            }
             let updatedItems = this.currentList.items;
             this.currentList = new List(title, type, desc);
             this.currentList.items = updatedItems;
