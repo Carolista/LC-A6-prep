@@ -9,8 +9,9 @@ import { List } from '../list';
 
 export class CurrentListComponent implements OnInit {
 
-    @Input() allLists: List[];
-    @Input() currentList: List;
+    // TODO: use the @Input() decorator (already imported above) to bring in currentList and allLists from the main component - you also need code in the <app-current-list> element in main.component.html for this to work!
+    currentList: List;
+    allLists: List[];
 
     editing: boolean = false;
     formIncomplete: boolean = false;
@@ -51,14 +52,13 @@ export class CurrentListComponent implements OnInit {
     }
 
     deleteList(): void {
-        if (confirm("Are you sure you want to delete this list?")) {
-            this.allLists.splice(this.allLists.indexOf(this.currentList), 1);
-            if (this.allLists.length > 0) {
-                this.currentList = this.allLists[0];
-            } else {
-                this.currentList = null;
-            }
-        } 
+        // TODO: Add a confirmation pop-up here just like you would in the DOM to make sure the user really wants to delete the list before allowing it to happen!
+        this.allLists.splice(this.allLists.indexOf(this.currentList), 1);
+        if (this.allLists.length > 0) {
+            this.currentList = this.allLists[0];
+        } else {
+            this.currentList = null;
+        }
     }
 
 }

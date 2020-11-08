@@ -1,47 +1,61 @@
+<!-- IMPORTANT: Before trying to add functionality to this file, get familiar with the properties and methods of the component's TS file -->
+
 <section>
 
-    
     <!-- Current list will display here -->
-    <h3>{{currentList.title}}</h3>
-    <p id="desc">{{currentList.desc}}</p>
 
-    <ng-container *ngIf="!editing">
+    <!-- TODO: Reference the current list to get the title and description -->
+    <h3>Some List</h3>
+    <p id="desc">Info about the list</p>
+
+    <!-- TODO: Make this entire section disappear if currently editing the list -->
+    <ng-container>
         <!-- Toggle to edit list -->
+        <!-- TODO: Make sure both of these buttons have click events to do what they're meant to do -->
         <div id="toggle">
-            <span class="mini-buttons" *ngIf="!editing" (click)="editing = true">[ Edit list ]</span>
-            <span class="mini-buttons" *ngIf="!editing" (click)="deleteList()">[ Delete list ]</span>
+            <span class="mini-buttons">[ Edit list ]</span>
+            <span class="mini-buttons">[ Delete list ]</span>
         </div>
         <!-- Checklist -->
-        <div class="list-group" *ngFor="let item of currentList.items">
-            <label class="list-item"><input type="checkbox" /> {{item}}</label>
+        <!-- TODO: Iterate over items in the list to display each string dynamically -->
+        <div class="list-group">
+            <label class="list-item"><input type="checkbox" /> Item</label>
         </div>
     </ng-container>
 
     <!-- Form to edit list -->
-    <div id="edit-list-form" *ngIf="editing">
+    <!-- TODO: Make this entire form section disappear when not editing -->
+    <div id="edit-list-form">
         <h4>Edit List:</h4>
-        <form #form>
+        <form>
             <div>
-                <input #titleField type="text" maxLength="20" value="{{currentList.title}}" [class.empty-warning]="formIncomplete" />
+                <!-- TODO: Assign a value attribute that dynamically fills the field with the current saved string, and TODO: apply the class .empty-warning only if the user tries to save changes with this field left blank -->
+                <input #titleField type="text" maxLength="20" />
                 <select #typeField>
                     <option value="general">General</option>
                     <option value="shopping">Shopping</option>
                     <option value="to do">To Do</option>
                 </select>
             </div>
-            <textarea #descField rows="3" cols="40" maxLength="120" placeholder="Description" value="{{currentList.desc}}"></textarea>
-            <div class="list-group" *ngFor="let item of currentList.items; let i = index">
-                <input #listItem class="list-item-edit" type=text value="{{item}}" (change)="saveItem(listItem.value, i)" />
+            <!-- TODO: Assign a value attribute that dynamically fills the field with the current saved string -->
+            <textarea #descField rows="3" cols="40" maxLength="120" placeholder="Description"></textarea>
+            <!-- There is some advanced stuff here with the *ngFor directive... add this to the div below: *ngFor="let item of currentList.items; let i = index" ...and notice the indexing -->
+            <div class="list-group">
+                <!-- TODO: Assign a value attribute to pre-fill items, and notice the (change) event already done for you... this will save the new string immediately! -->
+                <input #listItem class="list-item-edit" type=text (change)="saveItem(listItem.value, i)" />
             </div>
             
-            <p id="add-new-item" (click)="addItem()">+ Add new item to list</p>
+            <!-- TODO: Add the necessary click event here to call the method -->
+            <p id="add-new-item">+ Add new item to list</p>
 
+            <!-- TODO: For both buttons, add click events. Specifically, make sure the Save button passes in the values of the input fields when it calls the method to save changes to the list, and make sure the Cancel button makes the form disappear and undoes any warnings that might have been triggered. -->
             <div class="form-buttons">
-                <div id="Save" class="small-button" (click)="saveList(titleField.value, typeField.value, descField.value)">Save</div>
-                <div id="cancel" class="small-button" (click)="editing = false; formIncomplete = false">Cancel</div>
+                <div id="Save" class="small-button">Save</div>
+                <div id="cancel" class="small-button">Cancel</div>
             </div>
-        
-            <div class="warning" *ngIf="formIncomplete">Please give your list a title!</div>
+
+            <!-- TODO: Make sure this is visible only if the title field is left blank when the Create button is clicked (hint: look at what happens in the saveList() method) -->
+            <div class="warning">Please give your list a title!</div>
 
         </form>
     </div>
