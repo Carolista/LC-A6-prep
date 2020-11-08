@@ -1,7 +1,49 @@
 <section>
+
+    
+    <!-- Current list will display here -->
     <h3>{{currentList.title}}</h3>
     <p id="desc">{{currentList.desc}}</p>
-    <div class="list-group" *ngFor="let item of currentList.items">
-        <label class="list-item"><input type="checkbox" /> {{item}}</label>
+
+    <ng-container *ngIf="!editing">
+        <!-- Toggle to edit list -->
+        <div id="toggle">
+            <span class="mini-buttons" *ngIf="!editing" (click)="editing = true">[ Edit list ]</span>
+            <span class="mini-buttons" *ngIf="!editing" (click)="deleteList()">[ Delete list ]</span>
+        </div>
+        <!-- Checklist -->
+        <div class="list-group" *ngFor="let item of currentList.items">
+            <label class="list-item"><input type="checkbox" /> {{item}}</label>
+        </div>
+    </ng-container>
+
+    <!-- Form to edit list -->
+    <div id="edit-list-form" *ngIf="editing">
+        <h4>Edit List:</h4>
+        <form #form>
+            <div>
+                <input #titleField type="text" maxLength="20" value="{{currentList.title}}" [class.empty-warning]="formIncomplete" />
+                <select #typeField>
+                    <option value="general">General</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="to do">To Do</option>
+                </select>
+            </div>
+            <textarea #descField rows="3" cols="40" maxLength="120" placeholder="Description" value="{{currentList.desc}}"></textarea>
+            <div class="list-group" *ngFor="let item of currentList.items; let i = index">
+                <input #listItem class="list-item-edit" type=text value="{{item}}" (change)="saveItem(listItem.value, i)" />
+            </div>
+            
+            <p id="add-new-item" (click)="addItem()">+ Add new item to list</p>
+
+            <div class="form-buttons">
+                <div id="Save" class="small-button" (click)="saveList(titleField.value, typeField.value, descField.value)">Save</div>
+                <div id="cancel" class="small-button" (click)="editing = false; formIncomplete = false">Cancel</div>
+            </div>
+        
+            <div class="warning" *ngIf="formIncomplete">Please give your list a title!</div>
+
+        </form>
     </div>
+
 </section>

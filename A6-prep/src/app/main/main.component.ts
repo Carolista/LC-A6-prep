@@ -36,16 +36,13 @@ export class MainComponent implements OnInit {
         this.allLists[2].items = ["Drop business deposit at bank", "Pick up prescriptions", "Go grocery shopping (see Schnucks list)"];
         this.allLists[3].items = ["Unload dishwasher", "Clean out fridge", "Reload dishwasher", "Take out trash & recyclables", "Sweep kitchen floor", "Wash sheets & towels", "Change furnace filter"];
         this.allLists[4].items = ["shirts & pants for 3 days", "undies", "socks and shoes", "sleepwear", "light coat", "toiletries (don't forget deodorant!!!)", "hair clips", "phone charger", "pillow"];
+
+        this.currentList = this.allLists[0];
     }
 
     // Select new list to view
     viewNewList(list: List): void {
         this.currentList = list;
-        // for (let i=0; i < this.allLists.length; i++) {
-        //     if (this.allLists[i].title === list.title) {
-        //         this.currentList = this.allLists[i];
-        //     }
-        // }
     }
 
     // Create new list

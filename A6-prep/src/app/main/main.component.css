@@ -46,6 +46,7 @@ select {
 }
 
 #add-new {
+    text-transform: uppercase;
     cursor: pointer;
 }
 
@@ -54,43 +55,32 @@ select {
     flex-direction: column;
 }
 
-#form-buttons {
-    display: flex;
-    flex-direction: row;
-}
-
 #submit {
     margin-right: 15px;
 }
 
-#warning {
-    color: #962c2c;
-    margin: 10px 0px;
-}
+
 
 
 /** CLASSES **/
 
-.empty-warning {
-    border: 2px solid #962c2c;
-}
-
-.small-button {
-    font-size: 20px;
-    height: 28px;
-    width: 125px;
+.not-selected {
     color: #ccc;
-    text-align: center;
-    text-transform: uppercase;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 10px 15px 0px;
-    margin: 10px 0px 0px;
+    background-color: transparent;
 }
 
-.small-button:hover {
-    cursor: pointer;
+.selected {
     color: #222;
     background-color: #ccc;
-    border: 1px solid #ccc;
 }
+
+.selected:hover {
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
