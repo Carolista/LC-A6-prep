@@ -16,4 +16,4 @@ Then use 'git checkout starter-code' to switch to the starter-code branch:
 
 If you wish to reference the solution, you can switch to that branch anytime as well.
 
-This is part of a larger group of practice exercises and examples for students of LaunchCode's Web Development course (unit 1). See this document for the full list of repls, respositories, etc. https://tinyurl.com/y3bn6st4
+This is part of a larger group of practice exercises and examples for students of LaunchCode's Web Development course (unit 1). See [this document](https://tinyurl.com/y3bn6st4) for the full list of repls, respositories, etc. 
